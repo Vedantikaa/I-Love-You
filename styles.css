@@ -1,0 +1,79 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .panel {
+    z-index: 1;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .card {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card p {
+    margin-top: 10px;
+  }
+  
+  #nextButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff748c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #nextButton:hover {
+    background-color: #ff8da1;
+  }
+  
+  #proposalSection {
+    margin-top: 30px;
+  }
+  
+  #proposalSection p {
+    font-size: 20px;
+  }
+  
+  #proposalSection button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #ff748c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #proposalSection button:hover {
+    background-color: #ff8da1;
+  }
+  
+  #noButton[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
