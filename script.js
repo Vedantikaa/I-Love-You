@@ -96,6 +96,9 @@ document.getElementById('nextButton').addEventListener('click', function() {
         <p>Thank you for visiting, code by Vedii</p>
       `;
     });
+    
+    // Hide the "Next" button
+    document.getElementById('nextButton').style.display = 'none';
   }
 });
 
