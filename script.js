@@ -1,3 +1,6 @@
+// Define the pinks array with some color values
+const pinks = ["#ff748c", "#ff8da1", "#ffa7b6"];
+
 // Define the hearts array
 const hearts = [];
 
