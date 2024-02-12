@@ -1,57 +1,56 @@
-html {
-    height: 100%;
-  }
-  
-  body {
-    background: pink;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-  }
-  
-  .heart {
-    width: 50px;
-    height: 50px;
-    background: red;
-    transform: rotate(45deg);
-    position: absolute;
-  }
-  
-  .heart .left,
-  .heart .right {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: red;
-    position: absolute;
-  }
-  
-  .heart .left {
-    left: -25px;
-    top: 0;
-  }
-  
-  .heart .right {
-    left: 0;
-    top: -25px;
-  }
-  
-  h1,
-  h2 {
-    color: white;
-    position: relative;
-  }
-  
-  .panel {
-    z-index: 1;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
-  
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.heart {
+  width: 50px;
+  height: 50px;
+  background: red;
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.heart .left,
+.heart .right {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+}
+
+.heart .left {
+  left: -25px;
+  top: 0;
+}
+
+.heart .right {
+  left: 0;
+  top: -25px;
+}
+
+h1, h2 {
+  color: white;
+  position: relative;
+}
+
+.panel {
+  z-index: 1;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

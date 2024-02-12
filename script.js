@@ -41,6 +41,7 @@ class Heart {
 }
 
 const cardContents = [
+  "Sending you a virtual bouquet, each petal carrying my love across the miles.",
   "Though distance separates us, my love knows no bounds, and I propose my heart to you across the miles.",
   "Indulging in the sweetness of our love, even when miles apart, each chocolate piece symbolizes the moments we share.",
   "Though I can't hold you close, this teddy bear carries my warmth and affection to comfort you in my absence.",
@@ -66,7 +67,20 @@ document.getElementById('nextButton').addEventListener('click', function() {
   // Move to the next message
   currentMessageIndex++;
   if (currentMessageIndex >= cardContents.length) {
-    currentMessageIndex = 0; // Loop back to the first message
+    // Display final messages and button
+    document.getElementById('cardPanel').innerHTML = `
+      <p>Happy Valentine's Day, Vinit</p>
+      <p>Will you be my Valentine and the partner in crime (answer in Instagram)?</p>
+      <button id="okButton">OK</button>
+    `;
+    
+    // Add event listener to the "OK" button
+    document.getElementById('okButton').addEventListener('click', function() {
+      // Display final message
+      document.getElementById('cardPanel').innerHTML = `
+        <p>Thank you for visiting, code by Vedii</p>
+      `;
+    });
   }
 });
 
