@@ -61,6 +61,16 @@ document.getElementById('nextButton').addEventListener('click', function() {
   // Show the card panel when the button is clicked
   document.getElementById('cardPanel').style.display = 'block';
 
+  // Start heart animations
+  setInterval(() => {
+    const heart = new Heart(Math.random() * window.innerWidth, -100);
+    hearts.push(heart);
+  }, 200);
+
+  setInterval(() => {
+    hearts.forEach((heart) => heart.update());
+  }, 10);
+
   // Update card content
   updateCardContent();
 
@@ -89,13 +99,3 @@ function updateCardContent() {
   const message = cardContents[currentMessageIndex];
   cardPanel.innerHTML = `<p>${message}</p>`;
 }
-
-// Start heart animations
-setInterval(() => {
-  const heart = new Heart(Math.random() * window.innerWidth, -100);
-  hearts.push(heart);
-}, 200);
-
-setInterval(() => {
-  hearts.forEach((heart) => heart.update());
-}, 10);
