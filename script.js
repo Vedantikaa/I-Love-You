@@ -102,30 +102,33 @@ if (currentMessageIndex === 0) {
   }, 10);
 }
 
-// Update card content
-updateCardContent();
+// Add event listener to the "Next" button
+document.getElementById('nextButton').addEventListener('click', function() {
+  // Update card content
+  updateCardContent();
 
-// Move to the next message
-currentMessageIndex++;
+  // Move to the next message
+  currentMessageIndex++;
 
-if (currentMessageIndex * 6 >= cardContents.length) {
-  // Display final messages and button
-  document.getElementById('cardPanel').innerHTML = `
-    <p>Baaki Baatein on Instagram</p>
-    <button id="okButton">OK</button>
-  `;
-
-  // Add event listener to the "OK" button
-  document.getElementById('okButton').addEventListener('click', function() {
-    // Display final message
+  if (currentMessageIndex * 6 >= cardContents.length) {
+    // Display final messages and button
     document.getElementById('cardPanel').innerHTML = `
-      <p>Thank you for visiting, code by Vedii</p>
+      <p>Baaki Baatein on Instagram</p>
+      <button id="okButton">OK</button>
     `;
-  });
-} else {
-  // Show the card panel when the button is clicked
-  document.getElementById('cardPanel').style.display = 'block';
-}
+
+    // Add event listener to the "OK" button
+    document.getElementById('okButton').addEventListener('click', function() {
+      // Display final message
+      document.getElementById('cardPanel').innerHTML = `
+        <p>Thank you for visiting, code by Vedii</p>
+      `;
+    });
+
+    // Hide the "Next" button
+    document.getElementById('nextButton').style.display = 'none';
+  }
+});
 
 function updateCardContent() {
   const cardPanel = document.getElementById('cardPanel');
