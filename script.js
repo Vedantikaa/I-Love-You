@@ -90,9 +90,6 @@ let currentMessageIndex = 0;
 // Hide the card panel initially
 document.getElementById('cardPanel').style.display = 'none';
 
-// Show the card panel when the button is clicked
-document.getElementById('cardPanel').style.display = 'block';
-
 // Start heart animations only if it's the first time clicking "Next"
 if (currentMessageIndex === 0) {
   setInterval(() => {
@@ -125,6 +122,9 @@ if (currentMessageIndex * 6 >= cardContents.length) {
       <p>Thank you for visiting, code by Vedii</p>
     `;
   });
+} else {
+  // Show the card panel when the button is clicked
+  document.getElementById('cardPanel').style.display = 'block';
 }
 
 function updateCardContent() {
