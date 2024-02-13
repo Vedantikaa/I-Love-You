@@ -87,9 +87,6 @@ const cardContents = [
 
 let currentMessageIndex = 0;
 
-// Hide the card panel initially
-document.getElementById('cardPanel').style.display = 'none';
-
 // Add event listener to the "Next" button
 document.getElementById('nextButton').addEventListener('click', function() {
   // Move to the next message
@@ -128,3 +125,6 @@ function updateCardContent() {
   }
   cardPanel.innerHTML = message;
 }
+
+// Initial call to update card content
+updateCardContent();

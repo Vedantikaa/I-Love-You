@@ -54,3 +54,7 @@ h1, h2 {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
+#nextButton {
+  margin-top: 20px;
+}
