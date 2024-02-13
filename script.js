@@ -44,14 +44,45 @@ class Heart {
 }
 
 const cardContents = [
-  "Sending you a virtual bouquet, each petal carrying my love across the miles.",
-  "Though distance separates us, my love knows no bounds, and I propose my heart to you across the miles.",
-  "Indulging in the sweetness of our love, even when miles apart, each chocolate piece symbolizes the moments we share.",
-  "Though I can't hold you close, this teddy bear carries my warmth and affection to comfort you in my absence.",
-  "Distance may test us, but my promise to love and cherish you remains unwavering, no matter how many miles lie between us.",
-  "Sending you a virtual hug tight enough to bridge the distance and remind you of my presence, even when far away.",
-  "Across the miles, blowing kisses to you, each one carrying the passion and love I hold for you in my heart.",
-  "Though we may be far apart, today and every day, my love for you knows no distance, and our connection remains as strong as ever."
+  "In gardens lush with roses' sweet embrace,",
+  "I find the bloom that mirrors your grace.",
+  "Each petal whispers of our friendship's hue,",
+  "A bond so deep, enduring, and true.",
+  "",
+  "With bated breath, I dare to speak,",
+  "To bridge the gap our hearts do seek.",
+  "Not just a friend, but something more,",
+  "A journey together, forevermore.",
+  "",
+  "Sweetness in every moment we share,",
+  "Like chocolate, rich beyond compare.",
+  "Indulge in love's confectionary delight,",
+  "Wrapped in affection, day and night.",
+  "",
+  "A teddy bear to hold close at night,",
+  "Symbolic of love, comfort, and light.",
+  "In your arms, my worries take flight,",
+  "Together, we'll brave life's darkest night.",
+  "",
+  "Promises exchanged, vows unspoken,",
+  "In silent hearts, our bond unbroken.",
+  "To stand by you, come what may,",
+  "Guided by love, come what may.",
+  "",
+  "In tender embrace, our souls align,",
+  "Two hearts beating in rhythm divine.",
+  "A hug that speaks of love untold,",
+  "In each other's arms, we find our stronghold.",
+  "",
+  "On this day of love, I make my plea,",
+  "To be not just friends, but you and me.",
+  "Side by side, through thick and thin,",
+  "Let our journey together now begin.",
+  "",
+  "So, my dear friend, on this Valentine's Day,",
+  "I ask you to be mine in every way.",
+  "Together we'll laugh, together we'll cry,",
+  "Forever wala best-friend, you and I."
 ];
 
 let currentMessageIndex = 0;
@@ -81,63 +112,30 @@ document.getElementById('nextButton').addEventListener('click', function() {
 
   // Move to the next message
   currentMessageIndex++;
-  if (currentMessageIndex >= cardContents.length) {
+  if (currentMessageIndex * 6 >= cardContents.length) {
     // Display final messages and button
     document.getElementById('cardPanel').innerHTML = `
-      <p>In the garden of friendship, where blossoms never fade,</p>
-      <p>Where laughter dances freely in the sun's warm cascade,</p>
-      <p>There blooms a love so pure, a bond beyond compare,</p>
-      <p>In your eyes, dear friend, I find my solace, my air.</p>
-      <p></p>
-      <p>With every shared moment, our spirits intertwine,</p>
-      <p>In sync with the universe, our hearts align.</p>
-      <p>Through laughter and tears, in every joy and strife,</p>
-      <p>You've been my compass, my guiding light in life.</p>
-      <p></p>
-      <p>On this day of love, as Cupid's arrows fly,</p>
-      <p>I gather my courage, no need to be shy.</p>
-      <p>For in you, my dear friend, I see a love so true,</p>
-      <p>A love that's been waiting, just for me and you.</p>
-      <p></p>
-      <p>So, here's my proposal, not with rings of gold,</p>
-      <p>But with promises eternal, a story yet untold.</p>
-      <p>Will you be my forever wala best friend, my partner in crime,</p>
-      <p>Together, hand in hand, until the end of time?</p>
-      <p></p>
-      <p>With you, I've found completeness, in your embrace,</p>
-      <p>Let's journey together, in this endless chase.</p>
-      <p>For you're my everything, my confidant, my guide,</p>
-      <p>With you by my side, forever, I'll abide.</p>
-      <p></p>
-      <p>So let's paint the canvas of our lives anew,</p>
-      <p>With hues of friendship and love, ever true.</p>
-      <p>On this Valentine's Day, let's seal our fate,</p>
-      <p>As best friends forever, soulmates are innate.</p>
-      <p></p>
-      <button id="nextButton2">Next</button>
+      <p>Baaki Baatein on Instagram</p>
+      <button id="okButton">OK</button>
     `;
     
-    // Add event listener to the "Next" button
-    document.getElementById('nextButton2').addEventListener('click', function() {
-      // Display final messages and button
+    // Add event listener to the "OK" button
+    document.getElementById('okButton').addEventListener('click', function() {
+      // Display final message
       document.getElementById('cardPanel').innerHTML = `
-        <p>Baaki Baatein on Instagram</p>
-        <button id="okButton">OK</button>
+        <p>Thank you for visiting, code by Vedii</p>
       `;
-      
-      // Add event listener to the "OK" button
-      document.getElementById('okButton').addEventListener('click', function() {
-        // Display final message
-        document.getElementById('cardPanel').innerHTML = `
-          <p>Thank you for visiting, code by Vedii</p>
-        `;
-      });
     });
   }
 });
 
 function updateCardContent() {
   const cardPanel = document.getElementById('cardPanel');
-  const message = cardContents[currentMessageIndex];
-  cardPanel.innerHTML = `<p>${message}</p>`;
+  let message = '';
+  for (let i = 0; i < 6; i++) {
+    if (currentMessageIndex * 6 + i < cardContents.length) {
+      message += `<p>${cardContents[currentMessageIndex * 6 + i]}</p>`;
+    }
+  }
+  cardPanel.innerHTML = message;
 }
