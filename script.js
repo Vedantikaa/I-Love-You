@@ -90,53 +90,51 @@ let currentMessageIndex = 0;
 // Hide the card panel initially
 document.getElementById('cardPanel').style.display = 'none';
 
-// Start heart animations only if it's the first time clicking "Next"
-if (currentMessageIndex === 0) {
-  setInterval(() => {
-    const heart = new Heart(Math.random() * window.innerWidth, -100);
-    hearts.push(heart);
-  }, 200);
-
-  setInterval(() => {
-    hearts.forEach((heart) => heart.update());
-  }, 10);
-}
-
 // Add event listener to the "Next" button
 document.getElementById('nextButton').addEventListener('click', function() {
+  // Show the card panel when the button is clicked
+  document.getElementById('cardPanel').style.display = 'block';
+
+  // Start heart animations only if it's the first time clicking "Next"
+  if (currentMessageIndex === 0) {
+    setInterval(() => {
+      const heart = new Heart(Math.random() * window.innerWidth, -100);
+      hearts.push(heart);
+    }, 200);
+
+    setInterval(() => {
+      hearts.forEach((heart) => heart.update());
+    }, 10);
+  }
+
   // Update card content
   updateCardContent();
 
   // Move to the next message
   currentMessageIndex++;
-
-  if (currentMessageIndex * 6 >= cardContents.length) {
+  if (currentMessageIndex >= cardContents.length) {
     // Display final messages and button
     document.getElementById('cardPanel').innerHTML = `
-      <p>Baaki Baatein on Instagram</p>
+      <p>Happy Valentine's Day, Vinit</p>
+      <p>Will you be my Valentine and the partner in crime (answer in Instagram)?</p>
       <button id="okButton">OK</button>
     `;
+    
+// Add event listener to the "OK" button
+document.getElementById('okButton').addEventListener('click', function() {
+  // Display final message
+  document.getElementById('cardPanel').innerHTML = `
+    <p>Thank you for visiting, code by Vedii</p>
+  `;
+});
 
-    // Add event listener to the "OK" button
-    document.getElementById('okButton').addEventListener('click', function() {
-      // Display final message
-      document.getElementById('cardPanel').innerHTML = `
-        <p>Thank you for visiting, code by Vedii</p>
-      `;
-    });
-
-    // Hide the "Next" button
-    document.getElementById('nextButton').style.display = 'none';
-  }
+// Hide the "Next" button
+document.getElementById('nextButton').style.display = 'none';
+}
 });
 
 function updateCardContent() {
-  const cardPanel = document.getElementById('cardPanel');
-  let message = '';
-  for (let i = 0; i < 6; i++) {
-    if (currentMessageIndex * 6 + i < cardContents.length) {
-      message += `<p>${cardContents[currentMessageIndex * 6 + i]}</p>`;
-    }
-  }
-  cardPanel.innerHTML = message;
+const cardPanel = document.getElementById('cardPanel');
+const message = cardContents[currentMessageIndex];
+cardPanel.innerHTML = <p>${message}</p>;
 }
