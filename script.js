@@ -84,21 +84,55 @@ document.getElementById('nextButton').addEventListener('click', function() {
   if (currentMessageIndex >= cardContents.length) {
     // Display final messages and button
     document.getElementById('cardPanel').innerHTML = `
-      <p>Happy Valentine's Day, Vinit</p>
-      <p>Will you be my Valentine and the partner in crime (answer in Instagram)?</p>
-      <button id="okButton">OK</button>
+      <p>In the garden of friendship, where blossoms never fade,</p>
+      <p>Where laughter dances freely in the sun's warm cascade,</p>
+      <p>There blooms a love so pure, a bond beyond compare,</p>
+      <p>In your eyes, dear friend, I find my solace, my air.</p>
+      <p></p>
+      <p>With every shared moment, our spirits intertwine,</p>
+      <p>In sync with the universe, our hearts align.</p>
+      <p>Through laughter and tears, in every joy and strife,</p>
+      <p>You've been my compass, my guiding light in life.</p>
+      <p></p>
+      <p>On this day of love, as Cupid's arrows fly,</p>
+      <p>I gather my courage, no need to be shy.</p>
+      <p>For in you, my dear friend, I see a love so true,</p>
+      <p>A love that's been waiting, just for me and you.</p>
+      <p></p>
+      <p>So, here's my proposal, not with rings of gold,</p>
+      <p>But with promises eternal, a story yet untold.</p>
+      <p>Will you be my forever wala best friend, my partner in crime,</p>
+      <p>Together, hand in hand, until the end of time?</p>
+      <p></p>
+      <p>With you, I've found completeness, in your embrace,</p>
+      <p>Let's journey together, in this endless chase.</p>
+      <p>For you're my everything, my confidant, my guide,</p>
+      <p>With you by my side, forever, I'll abide.</p>
+      <p></p>
+      <p>So let's paint the canvas of our lives anew,</p>
+      <p>With hues of friendship and love, ever true.</p>
+      <p>On this Valentine's Day, let's seal our fate,</p>
+      <p>As best friends forever, soulmates are innate.</p>
+      <p></p>
+      <button id="nextButton2">Next</button>
     `;
     
-    // Add event listener to the "OK" button
-    document.getElementById('okButton').addEventListener('click', function() {
-      // Display final message
+    // Add event listener to the "Next" button
+    document.getElementById('nextButton2').addEventListener('click', function() {
+      // Display final messages and button
       document.getElementById('cardPanel').innerHTML = `
-        <p>Thank you for visiting, code by Vedii</p>
+        <p>Baaki Baatein on Instagram</p>
+        <button id="okButton">OK</button>
       `;
+      
+      // Add event listener to the "OK" button
+      document.getElementById('okButton').addEventListener('click', function() {
+        // Display final message
+        document.getElementById('cardPanel').innerHTML = `
+          <p>Thank you for visiting, code by Vedii</p>
+        `;
+      });
     });
-    
-    // Hide the "Next" button
-    document.getElementById('nextButton').style.display = 'none';
   }
 });
 
